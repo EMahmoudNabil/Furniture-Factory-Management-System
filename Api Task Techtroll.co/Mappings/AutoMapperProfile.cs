@@ -17,6 +17,11 @@ namespace Api_Task_Techtroll.co.Mappings
             CreateMap<Component, ComponentDto>().ReverseMap();
             CreateMap<CreateComponentDto, Component>();
             CreateMap<UpdateComponentDto, Component>();
+
+            // Subcomponent
+            CreateMap<Subcomponent, SubcomponentDto>().ReverseMap();
+            CreateMap<CreateSubcomponentDto, Subcomponent>();
+            CreateMap<UpdateSubcomponentDto, Subcomponent>();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Api_Task_Techtroll.co.Application.Interfaces;
 using Api_Task_Techtroll.co.Application.Services.ComponentService;
 using Api_Task_Techtroll.co.Application.Services.ProductService;
+using Api_Task_Techtroll.co.Application.Services.SubcomponentService;
 using Api_Task_Techtroll.co.Infrastructure.Persistence;
 using Api_Task_Techtroll.co.Infrastructure.Repositories;
 using Api_Task_Techtroll.co.Mappings;
@@ -25,6 +26,9 @@ namespace Api_Task_Techtroll.co
             builder.Services.AddScoped<IProductService, ProductService>();
             //  Component Service
             builder.Services.AddScoped<IComponentService, ComponentService>();
+            //  Subcomponent Service
+            builder.Services.AddScoped<ISubcomponentService, SubcomponentService>();
+
 
 
 
