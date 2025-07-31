@@ -1,0 +1,6 @@
+@Api_Task_Techtroll.co_HostAddress = http://localhost:5105
+
+GET {{Api_Task_Techtroll.co_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
