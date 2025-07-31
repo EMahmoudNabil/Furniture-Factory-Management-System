@@ -20,8 +20,13 @@ namespace Api_Task_Techtroll.co.Mappings
 
             // Subcomponent
             CreateMap<Subcomponent, SubcomponentDto>().ReverseMap();
-            CreateMap<CreateSubcomponentDto, Subcomponent>();
-            CreateMap<UpdateSubcomponentDto, Subcomponent>();
+            CreateMap<CreateSubcomponentDto, Subcomponent>()
+           .ForMember(dest => dest.InnerVeneer, opt => opt.MapFrom(src => src.VeneerInner ?? ""))
+           .ForMember(dest => dest.OuterVeneer, opt => opt.MapFrom(src => src.VeneerOuter ?? ""));
+
+            CreateMap<UpdateSubcomponentDto, Subcomponent>()
+                .ForMember(dest => dest.InnerVeneer, opt => opt.MapFrom(src => src.VeneerInner ?? ""))
+                .ForMember(dest => dest.OuterVeneer, opt => opt.MapFrom(src => src.VeneerOuter ?? ""));
         }
     }
 }

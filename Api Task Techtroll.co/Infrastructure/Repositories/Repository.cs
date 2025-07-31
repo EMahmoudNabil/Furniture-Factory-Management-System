@@ -1,4 +1,5 @@
 ﻿using Api_Task_Techtroll.co.Application.Interfaces;
+using Api_Task_Techtroll.co.Domain.Entities;
 using Api_Task_Techtroll.co.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
@@ -37,7 +38,10 @@ namespace Api_Task_Techtroll.co.Infrastructure.Repositories
             return await query.ToListAsync();
         }
 
-
+        //public IQueryable<Subcomponent> Query()
+        //{
+        //    return _context.Subcomponents.AsQueryable();
+        //}
         public IQueryable<T> GetQueryable() => _dbSet.AsQueryable();
 
         public async Task AddAsync(T entity) => await _dbSet.AddAsync(entity);

@@ -2,6 +2,7 @@
 using Api_Task_Techtroll.co.Application.Interfaces;
 using Api_Task_Techtroll.co.Domain.Entities;
 using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Api_Task_Techtroll.co.Application.Services.ComponentService
 {
@@ -56,5 +57,14 @@ namespace Api_Task_Techtroll.co.Application.Services.ComponentService
             await _unitOfWork.SaveAsync();
             return true;
         }
+
+        public async Task<IEnumerable<ComponentDto>> GetComponentsByProductId(int productId)
+        {
+            var components = await _unitOfWork.Components.GetAllAsync();
+            var filteredComponents = components.Where(c => c.ProductId == productId);
+            return _mapper.Map<IEnumerable<ComponentDto>>(filteredComponents);
+        }
+
     }
 }
+

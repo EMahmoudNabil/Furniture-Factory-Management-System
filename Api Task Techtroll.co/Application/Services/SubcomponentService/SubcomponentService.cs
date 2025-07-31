@@ -27,6 +27,13 @@ namespace Api_Task_Techtroll.co.Application.Services.SubcomponentService
             var entity = await _unitOfWork.Subcomponents.GetByIdAsync(id);
             return entity == null ? null : _mapper.Map<SubcomponentDto>(entity);
         }
+        public async Task<IEnumerable<SubcomponentDto>> GetByComponentIdAsync(int componentId)
+        {
+            var subcomponents = await _unitOfWork.Subcomponents.GetAllAsync();
+            var filtered = subcomponents.Where(s => s.ComponentId == componentId);
+
+            return _mapper.Map<IEnumerable<SubcomponentDto>>(filtered);
+        }
 
         public async Task<int> CreateAsync(CreateSubcomponentDto dto)
         {

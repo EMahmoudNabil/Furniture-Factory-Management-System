@@ -6,6 +6,8 @@ namespace Api_Task_Techtroll.co.Application.Services.SubcomponentService
     {
         Task<IEnumerable<SubcomponentDto>> GetAllAsync();
         Task<SubcomponentDto?> GetByIdAsync(int id);
+        Task<IEnumerable<SubcomponentDto>> GetByComponentIdAsync(int componentId);
+
         Task<int> CreateAsync(CreateSubcomponentDto dto);
         Task<bool> UpdateAsync(UpdateSubcomponentDto dto);
         Task<bool> DeleteAsync(int id);

@@ -55,5 +55,12 @@ namespace Api_Task_Techtroll.co.Controllers
             var success = await _componentService.DeleteAsync(id);
             return success ? NoContent() : NotFound();
         }
+
+        [HttpGet("byProduct/{productId}")]
+        public async Task<IActionResult> GetComponentsByProductId(int productId)
+        {
+            var components = await _componentService.GetComponentsByProductId(productId);
+            return Ok(components);
+        }
     }
 }

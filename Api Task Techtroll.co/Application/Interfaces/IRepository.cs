@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using Api_Task_Techtroll.co.Domain.Entities;
+using System.Linq.Expressions;
 
 namespace Api_Task_Techtroll.co.Application.Interfaces
 {
@@ -10,7 +11,7 @@ namespace Api_Task_Techtroll.co.Application.Interfaces
         Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
         Task<IEnumerable<T>> GetAllWithIncludeAsync(params Expression<Func<T, object>>[] includes);
         public IQueryable<T> GetQueryable();
-
+        //public IQueryable<T> Query();
         Task AddAsync(T entity);
         void Update(T entity);
         void Remove(T entity);
