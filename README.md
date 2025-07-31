@@ -1,26 +1,108 @@
 #  Furniture Factory Management API
 
-Web API to manage products, components, and subcomponents for a furniture factory, built using ASP.NET Core 9, Onion Architecture, and Entity Framework Core.
+A Web API for managing **products**, **components**, and **subcomponents** in a furniture factory system. Built using **ASP.NET Core 9**, **Entity Framework Core**, and **Onion Architecture**.
 
 ---
 
-## 🧱 Architecture
+## 🩱 Architecture Overview
 
-- ASP.NET Core 9 Web API
-- Entity Framework Core + Code First
-- Onion Architecture (Domain, Application, Infrastructure, API)
-- Repository Pattern + Unit of Work
-- AutoMapper
+* ASP.NET Core 9 Web API
+* Entity Framework Core (Code First)
+* Onion Architecture (Domain, Application, Infrastructure, API layers)
+* Repository Pattern & Unit of Work
+* AutoMapper for object mapping
 
 ---
 
-## 🔌 Database Connection
+## 🔌 Database Configuration
 
-Ensure you have **SQL Server** installed locally or remotely.
+Ensure **SQL Server** is installed locally or remotely.
 
-Open `appsettings.json` inside the `API` project and make sure this connection string is configured correctly:
+Update your `appsettings.json` file in the **API** project to match your SQL Server setup:
 
 ```json
 "ConnectionStrings": {
   "DefaultConnection": "Server=DESKTOP-8JFRNPP\\SQLEXPRESS;Database=Api_Task_Techtroll;Trusted_Connection=True;Encrypt=False;"
 }
+```
+
+> 💡 Replace `DESKTOP-8JFRNPP\\SQLEXPRESS` with your machine or server name if necessary.
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/Api-Task-Techtroll.git
+cd Api-Task-Techtroll
+```
+
+### 2. Install Dependencies
+
+```bash
+dotnet restore
+```
+
+### 3. Apply Database Migrations
+
+Using CLI:
+
+```bash
+dotnet ef database update --project "Infrastructure" --startup-project "API"
+```
+
+Or using Visual Studio Package Manager Console:
+
+```powershell
+Update-Database -Project "Api_Task_Techtroll.co.Infrastructure" -StartupProject "Api_Task_Techtroll.co.API"
+```
+
+### 4. Run the Application
+
+Via CLI:
+
+```bash
+dotnet run --project "API"
+```
+
+Or simply press `F5` in Visual Studio.
+
+---
+
+## 🛠 API Endpoints
+
+| Resource      | Method | Endpoint            | Description           |
+| ------------- | ------ | ------------------- | --------------------- |
+| Products      | GET    | `/api/Product`      | Get all products      |
+| Products      | POST   | `/api/Product`      | Create a new product  |
+| Components    | GET    | `/api/Component`    | Get all components    |
+| Subcomponents | GET    | `/api/Subcomponent` | Get all subcomponents |
+
+> ✅ All endpoints follow RESTful principles.
+
+---
+
+## 🧪 Technologies & Libraries Used
+
+* ASP.NET Core 9
+* Entity Framework Core
+* AutoMapper
+* SQL Server
+* FluentValidation / Data Annotations
+* Swagger (optional)
+
+---
+
+## 📌 Notes
+
+* The database must be created manually if it doesn't exist.
+* Swagger is not included by default. To enable it, install `Swashbuckle.AspNetCore` via NuGet.
+
+---
+
+## 👨‍💻 Author
+
+**Mahmoud Nabil**
+*Full Stack Developer – Assessment Task*
