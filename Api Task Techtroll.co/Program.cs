@@ -1,4 +1,5 @@
 ﻿using Api_Task_Techtroll.co.Application.Interfaces;
+using Api_Task_Techtroll.co.Application.Services.ComponentService;
 using Api_Task_Techtroll.co.Application.Services.ProductService;
 using Api_Task_Techtroll.co.Infrastructure.Persistence;
 using Api_Task_Techtroll.co.Infrastructure.Repositories;
@@ -20,25 +21,28 @@ namespace Api_Task_Techtroll.co
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            // ✅ Product Service
+            // Product Service
             builder.Services.AddScoped<IProductService, ProductService>();
+            //  Component Service
+            builder.Services.AddScoped<IComponentService, ComponentService>();
 
 
-            // ✅ Swagger  
+
+            //  Swagger  
             // Add swagger services to the container.
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            // ✅ Controllers  
+            //  Controllers  
             builder.Services.AddControllers();
 
-            // ✅ AutoMapper  
+            //  AutoMapper  
             builder.Services.AddAutoMapper(cfg =>
             {
                 cfg.AddProfile<AutoMapperProfile>();
             });
 
-            // ✅ CORS  
+            //  CORS  
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowFrontend", policy =>
@@ -52,7 +56,7 @@ namespace Api_Task_Techtroll.co
 
             var app = builder.Build();
 
-            // ✅ Middlewares  
+            //  Middlewares  
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
