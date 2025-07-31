@@ -1,4 +1,5 @@
 ﻿using Api_Task_Techtroll.co.Application.Interfaces;
+using Api_Task_Techtroll.co.Application.Services.ProductService;
 using Api_Task_Techtroll.co.Infrastructure.Persistence;
 using Api_Task_Techtroll.co.Infrastructure.Repositories;
 using Api_Task_Techtroll.co.Mappings;
@@ -18,6 +19,10 @@ namespace Api_Task_Techtroll.co
 
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            // ✅ Product Service
+            builder.Services.AddScoped<IProductService, ProductService>();
+
 
             // ✅ Swagger  
             // Add swagger services to the container.
