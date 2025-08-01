@@ -3,6 +3,10 @@
 A Web API for managing **products**, **components**, and **subcomponents** in a furniture factory system. Built using **ASP.NET Core 9**, **Entity Framework Core**, and **Onion Architecture**.
 
 ---
+🚀  Project Demo (https://youtu.be/HNxPPtqzXnQ)
+
+📋  Front End file (https://github.com/EMahmoudNabil/ui-react-app)
+
 
 ## 🩱 Architecture Overview
 
@@ -94,6 +98,17 @@ Or simply press `F5` in Visual Studio.
 * Swagger (optional)
 
 ---
+## 📸 Screenshots
+
+### Architecture Back End  
+![Architecture Back End ](<img width="493" height="561" alt="image" src="https://github.com/user-attachments/assets/14872c48-7126-4a16-a0bc-9e9467d90b11" />
+)
+
+### EndPoint
+![EndPoint](<img width="534" height="439" alt="2" src="https://github.com/user-attachments/assets/f93aad7b-49b8-48ad-bd39-51e77be29752" />
+)
+
+)
 
 ## 📌 Notes
 
