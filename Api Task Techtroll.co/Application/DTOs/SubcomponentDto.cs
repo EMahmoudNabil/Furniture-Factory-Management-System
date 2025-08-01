@@ -49,17 +49,18 @@ namespace Api_Task_Techtroll.co.Application.DTOs
 
         public int TotalQuantity { get; set; }
 
-        public decimal DetailLength { get; set; }
-        public decimal DetailWidth { get; set; }
-        public decimal DetailThickness { get; set; }
+        public float DetailLength { get; set; }
+        public float DetailWidth { get; set; }
+        public float DetailThickness { get; set; }
 
-        public decimal CuttingLength { get; set; }
-        public decimal CuttingWidth { get; set; }
-        public decimal CuttingThickness { get; set; }
+        public float CuttingLength { get; set; }
+        public float CuttingWidth { get; set; }
+        public float CuttingThickness { get; set; }
 
-        public decimal FinalLength { get; set; }
-        public decimal FinalWidth { get; set; }
-        public decimal FinalThickness { get; set; }
+        public float FinalLength { get; set; }
+        public float FinalWidth { get; set; }
+        public float FinalThickness { get; set; }
+
 
         public string? VeneerInner { get; set; }
         public string? VeneerOuter { get; set; }
